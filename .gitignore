@@ -1,24 +1,41 @@
-# Compiled class file
-*.class
+import java.util.Scanner;
 
-# Log file
-*.log
+public class LivroInterativo {
+//Esse codigo foi feito para demonstrar um jogo simples de multiplos finais e escolhas.
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bem-vindo ao Livro Interativo!");
+        System.out.println("Você está em uma encruzilhada. Para onde você quer ir? (esquerda/direita)");
+        String escolha1 = scanner.nextLine().toLowerCase();
 
-# BlueJ files
-*.ctxt
+        if (escolha1.equals("esquerda")) {
+            System.out.println("Você encontrou um rio. O que você quer fazer? (nadar/contornar)");
+            String escolha2 = scanner.nextLine().toLowerCase();
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+            if (escolha2.equals("nadar")) {
+                System.out.println("Você tenta nadar pelo rio, mas é arrastado pela correnteza. Fim.");
+            } else if (escolha2.equals("contornar")) {
+                System.out.println("Você contorna o rio e encontra um tesouro escondido. Parabéns, você venceu!");
+            } else {
+                System.out.println("Escolha inválida. Fim.");
+            }
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+        } else if (escolha1.equals("direita")) {
+            System.out.println("Você se depara com uma caverna escura. O que você quer fazer? (entrar/voltar)");
+            String escolha3 = scanner.nextLine().toLowerCase();
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+            if (escolha3.equals("entrar")) {
+                System.out.println("Você entra na caverna e encontra um dragão. Você foi queimado. Fim.");
+            } else if (escolha3.equals("voltar")) {
+                System.out.println("Você decide voltar e encontra um mapa para um tesouro. Parabéns, você venceu!");
+            } else {
+                System.out.println("Escolha inválida. Fim.");
+            }
+
+        } else {
+            System.out.println("Escolha inválida. Fim.");
+        }
+
+        scanner.close();
+    }
+}
